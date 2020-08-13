@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Variables */
+:root{
+    --medium-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+
+/* Elemento de Grid Global */
+.parent-grid-container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Header Navigation Links */
+.header{
+    display: flex;
+    gap: .5rem;
+    padding: .75rem;
+    background-color: #121212;
+    font-size: 1.25rem;
+}
+
+.header > .icons-right-align{
+    display: flex;
+    gap: .75rem;
+    margin-left: auto;
+}
+
+/* Main e Card Styling */
+.main {
+    background-color: #292929;
+}
+
+.central-card {
+    width: 90%;
+    margin: 1rem auto;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #121212;
+}
+
+.central-card .main-central-card-title-bar {
+    padding: 1rem;
+    
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.075)), #121212;
+    box-shadow: var(--medium-shadow);
+
+    font-size: clamp(1.25rem, 2.5vw, 2rem); 
+    text-align: center;
+    
+}
+
+
+.central-card fieldset{
+    font-size: .75rem;
+    width: 75%;
+    margin: 1rem auto;
+    border: 2px #F7DF1E solid;
+    border-radius: .25rem;
+}
+
+.central-card fieldset > legend {
+    padding: 0px 2px;
+    color: #F7DF1E;
+    user-select: none;
+
+}
+
+.central-card fieldset > input {
+    margin: 0;
+    padding: .5rem;
+    background: none;
+    width: 100%;
+    border: none;
+    color: white;
+
+}
+
+/* Removendo a linha do input quando ele está selecionado */
+.central-card fieldset > input:focus {
+    outline: none;
+    
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+  }
+
+
+
+
+.footer{
+    padding: 1rem;
+    background-color: #292929;
+
+    text-align: center;
+    font-size: .75rem;
+}
