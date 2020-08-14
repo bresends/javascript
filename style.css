@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 /* Variables */
-:root{
-    --medium-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+:root {
+    --medium-shadow: 4px 0px 3px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Default Styles */
+/* ---------------- Default Styles ---------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,14 +16,17 @@
     text-decoration: none;
 }
 
-/* Elemento de Grid Global */
-.parent-grid-container{
+/* ---------------- Global Grid ---------------- */
+
+.parent-grid-container {
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
 
-/* Header Navigation Links */
-.header{
+/* ---------------- Header Styling ---------------- */
+
+.header {
     display: flex;
     gap: .5rem;
     padding: .75rem;
@@ -30,13 +34,14 @@
     font-size: 1.25rem;
 }
 
-.header > .icons-right-align{
+.header>.icons-right-align {
     display: flex;
     gap: .75rem;
     margin-left: auto;
 }
 
-/* Main e Card Styling */
+/* ---------------- Main and Card ---------------- */
+
 .main {
     background-color: #292929;
 }
@@ -49,16 +54,20 @@
 
 .central-card .main-central-card-title-bar {
     padding: 1rem;
-    
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.075)), #121212;
+    background: #232323;
     box-shadow: var(--medium-shadow);
-
-    font-size: clamp(1.25rem, 2.5vw, 2rem); 
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
     text-align: center;
-    
 }
 
-.central-card fieldset{
+/* ---------------- Botton Card Container Styling ---------------- */
+
+.main-central-card-bottom-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.central-card fieldset {
     font-size: .75rem;
     width: 75%;
     margin: 1rem auto;
@@ -66,40 +75,72 @@
     border-radius: .25rem;
 }
 
-.central-card fieldset > legend {
+.central-card fieldset>legend {
     padding: 0px 2px;
     color: #F7DF1E;
     user-select: none;
-
 }
 
-.central-card fieldset > input {
+.central-card fieldset>input {
     margin: 0;
     padding: .5rem;
     background: none;
     width: 100%;
     border: none;
     color: white;
-
 }
 
 /* Removendo a linha do input quando ele está selecionado */
-.central-card fieldset > input:focus {
+
+.central-card fieldset>input:focus {
     outline: none;
-    
 }
 
-::placeholder {
-    color: rgb(255, 255, 255);
-  }
+.central-card .button {
+    padding: .25rem 1.5rem;
+    margin: 0 auto;
+    background: #F7DF1E;
+    border: none;
+    outline: none;
+    border-radius: .25em;
+    color: black;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+}
 
+.button:active {
+    transform: scale(0.9);
+}
 
+/* ---------------- Output Container Styling ---------------- */
 
+.botton-card-output-container>.output-title {
+    width: 80%;
+    margin: 1em auto 0 auto;
+    padding: .5em;
+    background-color: #333333;
+    box-shadow: var(--medium-shadow);
+    text-align: center;
+}
 
-.footer{
+.botton-card-output-container>.output-containter {
+    margin: 0 auto 10% auto;
+    width: 80%;
+    padding: .5em;
+    min-height: 10rem;
+    box-shadow: var(--medium-shadow);
+}
+
+/* ---------------- Footer Container Styling ---------------- */
+
+.footer {
     padding: 1rem;
     background-color: #292929;
-
     text-align: center;
     font-size: .75rem;
+}
+
+@media screen and (min-width: 900px) {
+    .button{
+        font-size:120px;
+    }
 }
